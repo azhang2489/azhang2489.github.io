@@ -2,6 +2,17 @@
 // Forzar HSTS incluyendo subdominios y opcionalmente habilitar preload
 header("Strict-Transport-Security: max-age=31536000; includeSubDomains; preload");
 ?>
+
+<?php
+// Previene que tu sitio sea embebido en iFrames de otros sitios (Clickjacking)
+header("X-Frame-Options: SAMEORIGIN");
+
+// Previene la interpretación incorrecta de tipos MIME (MIME-sniffing)
+header("X-Content-Type-Options: nosniff");
+
+// Controla cuánta información de referencia se envía al hacer clic en enlaces externos
+header("Referrer-Policy: strict-origin-when-cross-origin");
+?>
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
