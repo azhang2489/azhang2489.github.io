@@ -1,5 +1,6 @@
 <?php
-header("Strict-Transport-Security: max-age=31536000; includeSubDomains");
+// Forzar HSTS incluyendo subdominios y opcionalmente habilitar preload
+header("Strict-Transport-Security: max-age=31536000; includeSubDomains; preload");
 ?>
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
